@@ -25,7 +25,8 @@ body{
 position fixed : 스크롤을 내려도 항상 지정 위치에 존재. (지정 위치는 초기 컨테이닝 블록을 기준으로)
 padding 요소가 2개 : 위아래, 좌우의 간격을 뜻함.
 z-index : 수치가 높을수록 뷰의 가장 상단에 위치. 
-display : 요소를 어떻게 보여줄지 결정함.
+display : 해당요소가 화면에 어떻게 보일지 지정 ( 블록레벨/인라인레벨)
+align-items : 해당요소들이 화면상 어떤 기준으로 맞춰질지 지정
  */
 .navbar{
     width: 100%;
@@ -45,12 +46,19 @@ display : 요소를 어떻게 보여줄지 결정함.
     height: 45px;
 }
 
+/* 
+list-style : 해당 리스트의 속성을 설정할수있음.
+ */
 .nav-links{
     margin-top: 10px;
     display:flex;
     list-style: none;
 }
 
+/* 
+text-transform : 해당 text를 표기하는 방법을 설정할 수 있음.
+opacity : 불투명도
+ */
 .nav-items a{
     text-decoration:  none;
     margin-left: 20px;
@@ -88,6 +96,10 @@ display : 요소를 어떻게 보여줄지 결정함.
     border-color: #1f80ce;
 }
 
+/*
+border-radius : 요소의 모서리를 얼마나 둥글게 만들지 지정
+
+ */
 .sub-btn{
     background: #1f80ce;
     height: 30px;
@@ -112,6 +124,9 @@ display : 요소를 어떻게 보여줄지 결정함.
     text-decoration: none;
 }
 
+/*
+overflow-x : x축을 기준으로 구역을 넘는 요소에 대하여 어떻게 보이게할지 지정 
+ */
 .carousel-container{
     position: relative;
     width: 100%;
@@ -127,7 +142,7 @@ display : 요소를 어떻게 보여줄지 결정함.
     height: 100%;
     position: relative;
     margin: auto;
-    background: #000;
+    background: rgba(0,0,0,0.1);
 }
 
 .slider{
@@ -171,4 +186,39 @@ display : 요소를 어떻게 보여줄지 결정함.
     padding-left: 50px;
     margin-top: 30px;
     opacity: 0.8;
+}
+
+.video-card-container{
+    position: relative;
+    width: 92%;
+    margin: auto;
+    height: 10vw;
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.video-card{
+    position: relative;
+    min-width: calc(100%/5 - 10px);
+    width: calc(100%/5 - 10px);
+    height: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #030b17;
+}
+
+.video-card-image,
+.card-video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-video{
+    position: absolute;
+}
+
+.video-card:hover .video-card-image{
+    display: none;
 }
