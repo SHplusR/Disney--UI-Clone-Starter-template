@@ -10,6 +10,7 @@ const creatSlide = () =>{
         slideIndex =0;
     }
 //js를 통해 html요소를 생성하는 createElement
+
     let slide = document.createElement('div');
     let imgElement = document.createElement('img');
     let content = document.createElement('div');
@@ -49,10 +50,11 @@ setInterval(() =>{
     creatSlide();
 },3000);
 
-// video card
+// video card 시작.
 
 const videoCards = [...document.querySelectorAll('.video-card')];
 
+// videocards에 mouseover를 하냐 leave 를 하냐에 따라 애니메이션 재생을 보여줌
 videoCards.forEach( item => {
     item.addEventListener('mouseover', () => {
         let video = item.children[1];
@@ -67,20 +69,22 @@ videoCards.forEach( item => {
     })
 })
 
+
 let cardContainers = [...document.querySelectorAll('.card-container')];
 let preBtns = [...document.querySelectorAll('.pre-btn')];
 let nxtBtns = [...document.querySelectorAll('.nxt-btn')];
 
+// getBoundingClientRect : 해당 요소의 화면상 어디에 위치하는지 알 수 있는 함수.
 cardContainers.forEach((item,i) => {
     let containerDimensions = item.getBoundingClientRect();
     let containerWidth = containerDimensions.width;
-
     nxtBtns[i].addEventListener('click',() => {
-        item.scrollLeft += containerWidth -200;
+
+        item.scrollLeft += containerWidth -200; // item.scrollLeft = item.scrollLeft + containerWidth -200;
     })
 
     
     preBtns[i].addEventListener('click',() => {
-        item.scrollLeft -= containerWidth +200;
+        item.scrollLeft -= containerWidth +200; // item.scrollLeft = item.scrollLeft - containerWidth +200;
     })
 })

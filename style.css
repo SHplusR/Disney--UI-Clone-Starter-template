@@ -135,7 +135,11 @@ overflow-x : x축을 기준으로 구역을 넘는 요소에 대하여 어떻게
     overflow-x: hidden;
     margin-top: 80px;
 }
-
+/*
+background : rgba () 
+차례로 R 레드 [0~255] G 그린 [0~255] B 블루 [0~255] A(alpha) [0~1].
+A값으로 투명도를 조절할 수 있음.
+ */
 .carousel{
     display: flex;
     width: 92%;
@@ -145,6 +149,9 @@ overflow-x : x축을 기준으로 구역을 넘는 요소에 대하여 어떻게
     background: rgba(0,0,0,0.1);
 }
 
+/*
+transition : 프로퍼티 값의 변화가 이루어지는 시간.
+ */
 .slider{
     flex: 0 0 auto;
     margin-right: 30px;
@@ -166,6 +173,9 @@ overflow-x : x축을 기준으로 구역을 넘는 요소에 대하여 어떻게
     margin-left: auto;
 }
 
+/* 
+linear-gradient : 그라데이션. (to right, #030b17 80%, #0c111b00)은 오른쪽부터 #030b17 80%의 색상에서 #0c111b00로 그라데이션 함을 뜻한다.
+ */
 .slider-content{
     position: absolute;
     width: 50%;
@@ -188,6 +198,9 @@ overflow-x : x축을 기준으로 구역을 넘는 요소에 대하여 어떻게
     opacity: 0.8;
 }
 
+/*
+justify-content : 항목들을 어떻게 배치하는지 결정. space-between: 항목들을 고르게 정렬합니다
+ */
 .video-card-container{
     position: relative;
     width: 92%;
@@ -218,7 +231,9 @@ overflow-x : x축을 기준으로 구역을 넘는 요소에 대하여 어떻게
 .card-video{
     position: absolute;
 }
-
+/*
+hover : 마우스를 올릴때 어떻게 보일지 결정
+ */
 .video-card:hover .video-card-image{
     display: none;
 }
